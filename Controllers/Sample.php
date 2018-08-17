@@ -2,18 +2,14 @@
 
 class Sample extends Controller {
 
-	public $users = array();
+	public $users = [];
 
-	public static function test() {
+	public function test() {
+		parent::view("Sample") ;
+	}
 
-		$users = self::query("SELECT * from users");
-		self::query("SELECT * from users");
-
-		var_dump($users);
-
-		foreach ($users as $key => $value) {
-			echo $value;
-		}
+	public function index() {
+		parent::view("index") ;
 	}
 
 }

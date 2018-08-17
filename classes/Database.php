@@ -27,11 +27,6 @@ class Database {
 				return $data;
 			}
 		}
-
-
-
-
-
 }
 
 

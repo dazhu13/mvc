@@ -6,30 +6,31 @@
 class Route {
 
 
-	public static $validRoutes = array();
+	public static $validRoutes = [];
 
 	public static function set($route, $function){
 
-		//self::$validRoutes[] = $route;
-		array_push(self::$validRoutes, $route);
-		//echo $_GET['url']."<br />";
+		// Push to registered routes
+		//array_push(self::$validRoutes, $route);
 
-		//$finalRoutes = array_unique(self::$validRoutes);
-		//print_r(self::$validRoutes);
-		/*if($_GET['url'] === $route){
-			
-echo "string1";
-			$function->__invoke();
+		self::$validRoutes[$route] = $function;
+	}
+
+	public function useRoute($Routename){
+		echo $Routename."<br>";
+
+		$controller = '';
+		$useFunction = '';
+		foreach (self::$validRoutes as $key => $value){
+			if($key == $Routename){
+				echo "inside if <br>";
+				$function = explode('@',$value,2);
+				$controller = $function[0];
+				$useFunction = $function[1];
+			}	
 		}
-		else if($_GET['url'] !== $route) {
-			echo "string2";
-		}*/
-
-		foreach (self::$validRoutes as $key => $value) {
-			echo $key." ".$value."<br />";
-		}
-
-		
+		$control = new $controller;
+		$control->$useFunction();
 	}
 	
 	

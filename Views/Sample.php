@@ -1,6 +1,11 @@
 <?php
 
-echo "string";
 
-Sample::test();
+
+
+echo "sample";
+
+
+
+
 ?> 

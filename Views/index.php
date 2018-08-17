@@ -1,13 +1,2 @@
 
-
-<?php
-
-
-Index::test();
-
-
-
-
-
-
-?>
+<h1>HELLO WORLD</h1>

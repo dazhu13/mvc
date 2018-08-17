@@ -3,14 +3,16 @@
 
 class Controller extends Database {
 
-	public static function CreateView($viewName){
-		echo "sample"
-           	require('partials/header.php');
-           	require("Views/$viewName.php");
-           	require('partials/footer.php');
-        
-			//$this->load->partials('header')
+	public function __construct (){
+
+		echo "sample";
+        //$this->load->partials('header')
 	}
 
+	public function view($viewname){
+		include('Views/partials/header.php');
+		include("./Views/$viewname.php");
+		include('Views/partials/footer.php');
+	}
 
 }
